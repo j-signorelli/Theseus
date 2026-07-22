@@ -5,10 +5,6 @@
 # SPDX-License-Identifier: MIT
 cmake_minimum_required(VERSION 3.15)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
 project(Theseus)
 
 option(BUILD_TESTING "Build unit tests" ON)
@@ -74,6 +70,7 @@ endif()
 find_package(MPI REQUIRED COMPONENTS CXX)
 
 add_executable(theseus src/main.cpp)
+target_compile_features(theseus PUBLIC cxx_std_17)
 
 if (ENABLE_CUDA)
    message(STATUS "Building ${PROJECT_NAME} for CUDA platform.")
