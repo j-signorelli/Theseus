@@ -70,7 +70,7 @@ endif()
 find_package(MPI REQUIRED COMPONENTS CXX)
 
 add_executable(theseus src/main.cpp)
-target_compile_features(theseus PUBLIC cxx_std_17)
+target_compile_features(theseus PUBLIC cxx_std_20)
 
 if (ENABLE_CUDA)
    message(STATUS "Building ${PROJECT_NAME} for CUDA platform.")
